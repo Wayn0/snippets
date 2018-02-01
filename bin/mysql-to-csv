@@ -1,0 +1,6 @@
+#!/bin/sh
+# Convert mysql console output to csv
+# Credit https://stackoverflow.com/questions/356578/how-to-output-mysql-query-results-in-csv-format
+# e.g.
+# mysql -u root portal -B -e "select * from user;" | mysql-to-csv
+sed "s/'/\'/;s/\t/\",\"/g;s/^/\"/;s/$/\"/;s/\n//g"
